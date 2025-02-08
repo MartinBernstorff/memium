@@ -1,7 +1,7 @@
 from collections.abc import Mapping, Sequence
 from pathlib import Path
 
-import genanki
+import genanki  # type: ignore
 import pytest
 
 from ...environment import get_host_home_dir

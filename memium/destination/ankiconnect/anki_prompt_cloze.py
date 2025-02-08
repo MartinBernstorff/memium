@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-import genanki
+import genanki  # type: ignore
 
 from ...utils.hash_cleaned_str import hash_str_to_int
 from .anki_prompt import AnkiPrompt

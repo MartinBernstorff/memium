@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-import genanki
+import genanki  # type: ignore
 
 from memium.utils.extract_terms import get_terms_surrounded_by_underscores
 

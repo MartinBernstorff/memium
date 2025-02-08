@@ -32,7 +32,16 @@ A. å
 """
         )
 
-    main(base_deck=base_deck, input_dir=test_input_path, max_deletions_per_run=2, dry_run=False)
+    main(
+        base_deck=base_deck,
+        input_dir=test_input_path,
+        max_deletions_per_run=2,
+        dry_run=False,
+        push_all=False,
+        rephrase_if_younger_than_days=None,
+        rephrase_cache_days=None,
+        config_dir=Path(),
+    )
     assert "Pushing 1 cards to Anki" in caplog.text
 
     # Test idempotency
@@ -41,4 +50,8 @@ A. å
         input_dir=test_input_path,
         max_deletions_per_run=0,  # 0 deletions allowed to test idempotency
         dry_run=False,
+        push_all=False,
+        rephrase_if_younger_than_days=None,
+        rephrase_cache_days=None,
+        config_dir=Path(),
     )

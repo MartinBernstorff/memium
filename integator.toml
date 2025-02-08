@@ -1,0 +1,14 @@
+[integator]
+fail_fast = true
+push_on_success = true
+root_worktree_dir = "/Users/mabe/Git/memium"
+
+[[integator.steps]]
+name = "U"
+cmd = "doit"
+max_staleness_seconds = 1
+
+[[integator.steps]]
+name = "S"
+cmd = "~/Git/dotfiles/scripts/signoff.sh $PWD 'local/mergeable'"
+max_staleness_seconds = 1

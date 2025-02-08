@@ -15,7 +15,7 @@ from memium.environment import in_docker
 
 log = logging.getLogger(__name__)
 
-import genanki
+import genanki  # type: ignore
 import pydantic
 
 log = logging.getLogger(__name__)

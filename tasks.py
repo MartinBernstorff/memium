@@ -71,7 +71,7 @@ def test(c: inv.Context):
 def lint(c: inv.Context):
     print("--- Linting ---")
     c.run("ruff format .")
-    c.run("ruff . --fix --extend-select F401 --extend-select F841")
+    c.run("ruff check memium --fix --extend-select F401 --extend-select F841")
     print("✅✅✅ Lint ✅✅✅")
 
 

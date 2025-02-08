@@ -54,10 +54,10 @@ If you want to sync markdown notes to Anki, here's how to get started!
 $INPUT_DIR="PATH_TO_YOUR_INPUT_DIR"
 
 docker run -i \
-  --name=memium \
+  --name=memium-container \
+  --rm \
   -e HOST_INPUT_DIR=$INPUT_DIR \
   -v $INPUT_DIR:/input \
-  --restart unless-stopped \
   ghcr.io/martinbernstorff/memium:latest \
   memium \
   --input-dir /input/
@@ -122,4 +122,3 @@ inv validate_ci
 
 [github issue tracker]: https://github.com/MartinBernstorff/memium/issues
 [github discussions]: https://github.com/MartinBernstorff/memium/discussions
-

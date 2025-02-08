@@ -14,10 +14,10 @@ def remove_non_content_html_tags(text: str) -> str:
     soup = BeautifulSoup(text, "html.parser")
 
     for img in soup.find_all("img"):
-        if img.get("src"):
-            img.replace_with(img["src"])
+        if img.get("src"):  # type: ignore
+            img.replace_with(img["src"])  # type: ignore
         else:
-            img.delete()
+            img.delete()  # type: ignore
 
     return soup.text
 

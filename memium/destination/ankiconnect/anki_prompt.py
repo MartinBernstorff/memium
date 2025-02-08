@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from collections.abc import Sequence
 from dataclasses import dataclass
 
-import genanki
+import genanki  # type: ignore
 
 from memium.utils.markdown_parser import to_html
 

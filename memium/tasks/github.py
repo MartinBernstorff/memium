@@ -27,7 +27,7 @@ def get_issues_assigned_to_me(c: inv.Context) -> Sequence[GithubIssue] | None:
 
 def issue_dialog(my_issues: Sequence[GithubIssue]) -> int:
     issue_strings = [
-        f"[{get_letter_from_alphabet_position(i+1)}] #{issue.number} {issue.title}"
+        f"[{get_letter_from_alphabet_position(i + 1)}] #{issue.number} {issue.title}"
         for i, issue in enumerate(my_issues)
     ]
 

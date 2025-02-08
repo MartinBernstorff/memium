@@ -2,7 +2,7 @@ import logging
 import warnings
 from collections.abc import Sequence
 
-import genanki
+import genanki  # type: ignore
 from iterpy import Iter
 
 from ..source.prompts.prompt import DestinationPrompt

@@ -1,3 +1,4 @@
+from datetime import datetime
 from pathlib import Path
 
 from ..document import Document
@@ -17,6 +18,7 @@ This is another block without any cloze prompts.
 
 """,
         source_path=tmpdir / "test.md",
+        last_modified=datetime.now(),
     )
 
     extractor = ClozePromptExtractor().extract_prompts(doc)
@@ -51,7 +53,7 @@ Content in another {block}
     ],
 )
 def test_ignore_block_types(content: str, skipped: bool):
-    doc = Document(content=content, source_path=Path("test.md"))
+    doc = Document.fake(content=content)
     extractor = ClozePromptExtractor().extract_prompts(doc)
 
     if skipped:

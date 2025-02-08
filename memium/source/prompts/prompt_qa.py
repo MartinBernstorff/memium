@@ -52,3 +52,12 @@ class QAFromDoc(QAPrompt, PromptFromDocMixin):
     @property
     def tags(self) -> Sequence[str]:
         return self.parent_doc.tags
+
+
+@dataclass(frozen=True)
+class RephrasedQAFromDoc(QAPrompt, PromptFromDocMixin):
+    rephrased_question: str
+
+    @property
+    def tags(self) -> Sequence[str]:
+        return self.parent_doc.tags

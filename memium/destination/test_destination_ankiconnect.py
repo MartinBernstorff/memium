@@ -7,6 +7,7 @@ from ..source.prompts.prompt_qa import QAWithoutDoc
 from .ankiconnect.anki_converter import AnkiPromptConverter
 from .ankiconnect.ankiconnect_gateway import (
     AnkiField,
+    FakeAnkiCommand,
     ImportPackage,
     SpieAnkiconnectGateway,
     UpdateModel,
@@ -62,7 +63,10 @@ def test_ankiconnect_push_prompts():
         ]
     )
 
-    expected_commands = [(ImportPackage, 1), (UpdateModel, 2)]
+    expected_commands: list[tuple[type[FakeAnkiCommand], int]] = [
+        (ImportPackage, 1),
+        (UpdateModel, 2),
+    ]
     import_package_command = next(
         c for c in gateway.executed_commands if isinstance(c, ImportPackage)
     )

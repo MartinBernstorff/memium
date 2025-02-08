@@ -1,3 +1,4 @@
+import datetime
 import logging
 import re
 from collections.abc import Sequence
@@ -72,7 +73,11 @@ class MarkdownDocumentSource(BaseDocumentSource):
             except Exception as e:
                 raise Exception(f"Could not sanitize file {file_path}") from e
 
-            return Document(content=sanitized, source_path=file_path)
+            return Document(
+                content=sanitized,
+                source_path=file_path,
+                last_modified=datetime.datetime.fromtimestamp(file_path.stat().st_mtime),
+            )
         except Exception as e:
             log.warning(f"Could not retrieve {file_path}: {e}")
             return FileNotRetrievedError(file_path, e)

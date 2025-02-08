@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 
-import genanki
+import genanki  # type: ignore
 
 from .anki_prompt_cloze import AnkiCloze
 from .anki_prompt_qa import AnkiQA

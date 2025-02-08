@@ -1,5 +1,4 @@
 from collections.abc import Sequence
-from pathlib import Path
 
 from .document import Document
 from .document_source import BaseDocumentSource
@@ -11,10 +10,9 @@ def test_document_prompt_source():
     source = DocumentPromptSource(
         document_ingester=FakeDocumentIngester(
             [
-                Document(
+                Document.fake(
                     """Q. What is a test even?
-A. Nothing""",
-                    Path("test.md"),
+A. Nothing"""
                 )
             ]
         ),

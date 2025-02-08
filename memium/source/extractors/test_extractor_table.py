@@ -1,5 +1,6 @@
 from collections.abc import Sequence
 from dataclasses import dataclass
+from datetime import datetime
 from pathlib import Path
 
 import pytest
@@ -53,6 +54,7 @@ def test_table_extractor(example: TableExtractorExample):
 | 31 |      |
 {example.table_prompt}""",
         source_path=Path(__file__),
+        last_modified=datetime.now(),
     )
 
     assert {

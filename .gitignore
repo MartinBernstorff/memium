@@ -120,3 +120,7 @@ test_package
 .testmondata
 .gokid*
 .gokid.*
+.vscode/settings.json
+*doit*
+.testmondata*
+.logs/
